@@ -1,0 +1,16 @@
+# Internal governance data and secrets
+*.sqlite
+*.sqlite3
+*.db
+*.db-wal
+*.db-shm
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+private/
+internal/
+*.docx
+*.pdf
