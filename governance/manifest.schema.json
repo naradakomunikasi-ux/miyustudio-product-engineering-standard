@@ -1,0 +1,59 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "MiyuStudio Artifact Manifest",
+  "type": "object",
+  "required": [
+    "artifact_id",
+    "version",
+    "status",
+    "sha256",
+    "source_system"
+  ],
+  "properties": {
+    "artifact_id": {
+      "type": "string"
+    },
+    "version": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "draft",
+        "review",
+        "approved",
+        "released"
+      ]
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "source_system": {
+      "enum": [
+        "google_drive",
+        "github",
+        "local"
+      ]
+    },
+    "drive_file_id": {
+      "type": "string"
+    },
+    "drive_revision_id": {
+      "type": "string"
+    },
+    "github_commit_sha": {
+      "type": "string"
+    },
+    "checkpoint_id": {
+      "type": "integer"
+    },
+    "approved_by": {
+      "type": "string"
+    },
+    "approved_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "additionalProperties": false
+}
